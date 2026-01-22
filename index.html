@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OZ Náruč nádeje - Pomoc pre Stanku a ľudí v bdelej kóme">
-    <title>OZ Náruč nádeje - Pomôžte Stanke</title>
+    <meta name="description" content="Pomoc pre Stanku - Výťažok z tomboly">
+    <title>Tombola pre Stanku</title>
     <style>
         * {
             margin: 0;
@@ -15,8 +15,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #000000 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -43,28 +43,32 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #D4AF37;
             padding: 40px 25px;
             text-align: center;
+            border-bottom: 3px solid #D4AF37;
         }
 
         .header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
         }
 
         .header .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            font-weight: 300;
+            font-size: 1.3rem;
+            opacity: 1;
+            font-weight: 500;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
         }
 
         .heart {
             display: inline-block;
-            color: #ff6b9d;
+            color: #D4AF37;
             animation: heartbeat 1.5s ease-in-out infinite;
         }
 
@@ -95,16 +99,17 @@
             float: left;
             line-height: 0.8;
             margin: 5px 10px 0 0;
-            color: #667eea;
+            color: #D4AF37;
         }
 
         .organization {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            color: #D4AF37;
             padding: 25px;
             border-radius: 15px;
             margin: 30px 0;
             text-align: center;
+            border: 2px solid #D4AF37;
         }
 
         .organization h2 {
@@ -118,15 +123,16 @@
         }
 
         .donate-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             padding: 30px;
             border-radius: 15px;
             text-align: center;
             margin-top: 30px;
+            border: 2px solid #D4AF37;
         }
 
         .donate-section h2 {
-            color: #667eea;
+            color: #000000;
             margin-bottom: 20px;
             font-size: 1.7rem;
         }
@@ -145,13 +151,13 @@
         }
 
         .donate-info strong {
-            color: #667eea;
+            color: #D4AF37;
             font-size: 1.1rem;
         }
 
         .account-number {
-            background: #667eea;
-            color: white;
+            background: #000000;
+            color: #D4AF37;
             padding: 15px;
             border-radius: 8px;
             font-size: 1.3rem;
@@ -159,32 +165,33 @@
             letter-spacing: 1px;
             margin: 15px 0;
             word-break: break-all;
+            border: 2px solid #D4AF37;
         }
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #D4AF37 0%, #B8941E 100%);
+            color: #000000;
             padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
             margin-top: 15px;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
 
         .signature {
             text-align: right;
             font-size: 1.2rem;
             margin-top: 30px;
-            color: #667eea;
+            color: #D4AF37;
             font-style: italic;
         }
 
@@ -285,16 +292,11 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="hope-icon">🕊️</div>
-            <h1>Náruč nádeje</h1>
-            <p class="subtitle">Každá pomoc znamená nádej a zlepšenie kvality života</p>
+            <h1>Tombola pre Stanku</h1>
+            <p class="subtitle">Výťažok z dnešnej tomboly ide na pomoc Stanke</p>
         </div>
 
         <div class="content">
-            <div class="photo-section">
-                <img src="stanka.jpg" alt="Stanka s rodinou" loading="lazy">
-                <p class="photo-caption">Stanka s rodinou</p>
-            </div>
 
             <div class="story">
                 <p>Sme úplne obyčajná rodina. Rodinné oslavy, sviatky, výlety sme trávili spolu. Moja sestra Stanka bola zdravá, aktívna žena. Je matkou dvoch detí. Svojej rodine sa venovala celým srdcom. Ani vo sne by nám nenapadlo, že život sa dokáže tak rýchlo a nečakane obrátiť.</p>
@@ -307,40 +309,29 @@
 
                 <p>Stanka sa pomalými krokmi posúva dopredu. Aj tie nepatrné zlepšenia sú obrovským úspechom. Každá pomoc – aj tá najmenšia znamená nádej a zlepšenie kvality života.</p>
             </div>
-
-            <div class="organization">
-                <h2>🤝 OZ Náruč nádeje</h2>
-                <p>Pomoc pacientom v bdelej kóme a ich rodinám</p>
-            </div>
-
-            <div class="donate-section">
-                <h2>Ako môžete pomôcť?</h2>
-                
-                <div class="donate-info">
-                    <p><strong>Darujte prostredníctvom banky</strong></p>
-                    <p>Číslo účtu:</p>
-                    <div class="account-number">SK89 0200 0000 0054 2839 1234</div>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
-                        (Pre potreby zbierky - upravte číslo účtu OZ Náruč nádeje)
-                    </p>
-                </div>
-
-                <p style="margin-top: 20px; font-size: 1.1rem; color: #555;">
-                    <strong>Ďakujeme za každú pomoc! <span class="heart">❤️</span></strong>
-                </p>
-            </div>
-
             <div class="signature">
                 Jana Vachanová <span class="heart">❤️</span>
             </div>
+
+            <div class="photo-section">
+                <img src="stanka.jpg" loading="lazy">
+            </div>
+
+            <div class="donate-section">                
+                <div class="donate-info">
+                    <p style="font-size: 1.2rem; color: #000;"><strong>Celý výťažok z dnešnej tomboly</strong></p>
+                    <p style="font-size: 1.1rem; color: #555; margin: 15px 0;">pôjde na pomoc Stanke a financovanie jej rehabilitácií, ktoré jej pomáhajú v boji o zlepšenie zdravotného stavu.</p>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 1.2rem; color: #000;">
+                    <strong>Ďakujeme za každú pomoc! <span class="heart">💛</span></strong>
+                </p>
+            </div>
+
         </div>
 
         <div class="footer">
-            <p><strong>Ďakujeme, že pomáhate.</strong></p>
             <p>Vaša podpora dáva nádej Stanke a jej rodine.</p>
-            <p style="margin-top: 15px; font-size: 0.85rem; color: #999;">
-                © 2026 OZ Náruč nádeje
-            </p>
         </div>
     </div>
 </body>
