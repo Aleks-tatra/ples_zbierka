@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OZ Náruč nádeje - Pomoc pre Stanku a ľudí v bdelej kóme">
+    <title>OZ Náruč nádeje - Pomôžte Stanke</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #ff6b9d;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        .content {
+            padding: 35px 25px;
+        }
+
+        .story {
+            margin-bottom: 30px;
+        }
+
+        .story p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-weight: bold;
+            float: left;
+            line-height: 0.8;
+            margin: 5px 10px 0 0;
+            color: #667eea;
+        }
+
+        .organization {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .organization h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .organization p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .donate-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .donate-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.7rem;
+        }
+
+        .donate-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .donate-info p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        .donate-info strong {
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .account-number {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            word-break: break-all;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .signature {
+            text-align: right;
+            font-size: 1.2rem;
+            margin-top: 30px;
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .hope-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .photo-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .photo-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .photo-caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .story p {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .organization h2 {
+                font-size: 1.3rem;
+            }
+
+            .donate-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .account-number {
+                font-size: 1.1rem;
+                padding: 12px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.4rem;
+            }
+
+            .account-number {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="hope-icon">🕊️</div>
+            <h1>Náruč nádeje</h1>
+            <p class="subtitle">Každá pomoc znamená nádej a zlepšenie kvality života</p>
+        </div>
+
+        <div class="content">
+            <div class="photo-section">
+                <img src="stanka.jpg" alt="Stanka s rodinou" loading="lazy">
+                <p class="photo-caption">Stanka s rodinou</p>
+            </div>
+
+            <div class="story">
+                <p>Sme úplne obyčajná rodina. Rodinné oslavy, sviatky, výlety sme trávili spolu. Moja sestra Stanka bola zdravá, aktívna žena. Je matkou dvoch detí. Svojej rodine sa venovala celým srdcom. Ani vo sne by nám nenapadlo, že život sa dokáže tak rýchlo a nečakane obrátiť.</p>
+
+                <p>Všetko sa zmenilo počas jednej slnečnej novembrovej nedele. Stanka bola s manželom Stankom a dcérou Simonkou na výlete v Haluzickej tiesňave, keď náhle skolabovala. Jej manžel okamžite začal s resuscitáciou a spolu so Simonkou privolali záchranárov. Stanku sa podarilo oživiť, no žiaľ, ostala v bdelej kóme. Lekári nám veľa nádeje nedávali.</p>
+
+                <p>My sme sa však nevzdali. Začali sme s rehabilitáciami. Stanka absolvovala pobyt v Adeli, neskôr rehabilitačné pobyty v Arcade a v Axise. Momentálne má za sebou aj intenzívny dvojtýždňový rehabilitačný pobyt v Ostrave v Arcade, kde bola zaradená do programu elektroakupunktúry. Tieto rehabilitačné pobyty napomáhajú k stimulácii mozgu a k prebudeniu z bdelej kómy.</p>
+
+                <p>Aby bolo možné absolvovať tieto rehabilitácie je potrebné neustále získavať finančné prostriedky. Pre Stanku sme založili OZ Náruč nádeje, ktoré pomáha pacientom v bdelej kóme a ich rodinám zvládať tieto nesmierne náročné životné situácie.</p>
+
+                <p>Stanka sa pomalými krokmi posúva dopredu. Aj tie nepatrné zlepšenia sú obrovským úspechom. Každá pomoc – aj tá najmenšia znamená nádej a zlepšenie kvality života.</p>
+            </div>
+
+            <div class="organization">
+                <h2>🤝 OZ Náruč nádeje</h2>
+                <p>Pomoc pacientom v bdelej kóme a ich rodinám</p>
+            </div>
+
+            <div class="donate-section">
+                <h2>Ako môžete pomôcť?</h2>
+                
+                <div class="donate-info">
+                    <p><strong>Darujte prostredníctvom banky</strong></p>
+                    <p>Číslo účtu:</p>
+                    <div class="account-number">SK89 0200 0000 0054 2839 1234</div>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
+                        (Pre potreby zbierky - upravte číslo účtu OZ Náruč nádeje)
+                    </p>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 1.1rem; color: #555;">
+                    <strong>Ďakujeme za každú pomoc! <span class="heart">❤️</span></strong>
+                </p>
+            </div>
+
+            <div class="signature">
+                Jana Vachanová <span class="heart">❤️</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Ďakujeme, že pomáhate.</strong></p>
+            <p>Vaša podpora dáva nádej Stanke a jej rodine.</p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #999;">
+                © 2026 OZ Náruč nádeje
+            </p>
+        </div>
+    </div>
+</body>
+</html>
